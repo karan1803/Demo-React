@@ -32,10 +32,36 @@ function ChartView() {
             borderWidth: 1,
           },
         ],
+    };
+    const options = {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: true,
+            position: 'right',
+          },
+          title: {
+            display: true,
+            text: "Sale Details",
+            font: {
+              size: 24,
+            }
+          },
+          datalabels: {
+            formatter: (value, ctx) => {
+              if (ctx.chart.data.labels) {
+                return ctx.chart.data.labels[ctx.dataIndex];
+              }
+            },
+          },
+        }
       };
 
     return (
-        <Pie data={data} />
+        <div className="chart-container">
+            <h5 style={{ textAlign: "center" }}>Pie Chart</h5>
+            <Pie data={data} options= {options} />
+        </div>
     );
 }
 

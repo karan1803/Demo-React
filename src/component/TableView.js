@@ -15,30 +15,33 @@ function TableView() {
 
    },[])
   return (
-    <Table striped>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Mobile</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-      <tbody>
-      {
+    <div className="col-12">
+      <h5>User List</h5>
+      <Table responsive striped>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+        {
 
-      userList.map((list) =>
-        <tr key={list.id}>
-          <td>{list.id}</td>
-          <td>{list.name}</td>
-          <td>{list.mobile}</td>
-          <td>{list.email}</td>
-        </tr>
-        )
-      }
+        userList.map((list) =>
+          <tr key={list.id}>
+            <td>{list.id}</td>
+            <td>{list.name}</td>
+            <td>{list.mobile}</td>
+            <td>{list.email}</td>
+          </tr>
+          )
+        }
 
-      </tbody>
-    </Table>
+        </tbody>
+      </Table>
+    </div>
   );
 }
 
